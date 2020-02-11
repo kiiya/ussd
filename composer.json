@@ -1,0 +1,54 @@
+{
+    "name": "kiiya/ussd",
+    "description": "Build complex USSD logic using finite-state automata.",
+    "keywords": [
+        "kiiya",
+        "ussd"
+    ],
+    "homepage": "https://github.com/kiiya/ussd",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Kiiya",
+            "email": "kiiyaerick@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kiiya\\Ussd\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kiiya\\Ussd\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kiiya\\Ussd\\UssdServiceProvider"
+            ],
+            "aliases": {
+                "Ussd": "Kiiya\\Ussd\\UssdFacade"
+            }
+        }
+    }
+}
